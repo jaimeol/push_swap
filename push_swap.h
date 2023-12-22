@@ -16,14 +16,14 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				num;
 	struct s_list	*next;
 }	t_list;
 
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	ss(t_list **stack_a, t_list **stack_b);
-void	pa(t_list **stack_a, t_list +*stack_b);
+void	pa(t_list **stack_a, t_list	**stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 
 #endif
