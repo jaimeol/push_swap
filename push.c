@@ -43,7 +43,7 @@ static void	push(t_list **src, t_list **dest)
 
 void	pa(t_list **stack_a, t_list **stack_b)
 {
-	push(stack_b, stack_b);
+	push(stack_b, stack_a);
 	ft_putstr("pa\n");
 }
 
@@ -53,7 +53,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pb\n");
 }
 
-/*void printList(t_list *head) {
+void printList(t_list *head) {
     while (head != NULL) {
         printf("%d ", head->num);
         head = head->next;
@@ -80,7 +80,13 @@ int main() {
     printList(stack2);
 
     // Llamar a la función push para pasar el primer elemento de stack1 a stack2
-    pa(&stack1, &stack2);
+	void mover
+    if (stack1 != NULL) {
+        t_list *temp = stack1->next;
+        stack1->next = stack2;
+        stack2 = stack1;
+        stack1 = temp;
+    }
 
     // Imprimir el estado final de las pilas
     printf("Después de push:\n");
@@ -90,4 +96,4 @@ int main() {
     printList(stack2);
 
     return 0;
-}*/
+}
