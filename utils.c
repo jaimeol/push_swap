@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr_fd(char *s, int fd)
+#include "push_swap.h"
+
+void	ft_putstr(char *s)
 {
 	int	i;
 
@@ -25,3 +27,27 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
+void	ft_lstadd_front(t_list **stack, t_list *new)
+{
+	new -> next = *stack;
+	*stack = new;
+}
+
+t_list	*ft_lstnew(int num)
+{
+	t_list	*k;
+
+	k = malloc(sizeof(t_list));
+	if (k == NULL)
+		return (NULL);
+	k -> num = num;
+	k -> next = NULL;
+	return (k);
+}
+
+t_list	*ft_lstlast(t_list *stack)
+{
+	while (stack && stack -> next)
+		stack = stack -> next;
+	return (stack);
+}

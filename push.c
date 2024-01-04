@@ -11,34 +11,19 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
-#include <unistd.h>
-
-void	ft_putstr(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s != NULL)
-	{
-		while (s[i] != '\0')
-		{
-			write(1, &s[i], 1);
-			i++;
-		}
-	}
-}
 
 static void	push(t_list **src, t_list **dest)
 {
 	t_list	*aux;
+	t_list	*newnode;
 
-	if (*dest == NULL)
-		return ;
-	aux = (*src)-> next;
-	(*src)->next = *dest;
-	*src = *dest;
-	*src = aux;
+	newnode = ft_lstnew((*src)->num);
+	newnode -> next = *dest;
+	*dest = newnode;
+
+	aux = *src;
+	*src = (*src)-> next;
+	free(aux);
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)
@@ -53,47 +38,72 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pb\n");
 }
 
-void printList(t_list *head) {
-    while (head != NULL) {
-        printf("%d ", head->num);
-        head = head->next;
-    }
-    printf("\n");
+int	main()
+{
+	t_list	*stack_a = NULL;
+	t_list	*stack_b = NULL;
+	t_list	*aux;
+
+	t_list	*node1, *node2, *node3, *node4, *node5;
+
+	node1 = malloc(sizeof(t_list));
+	node1 -> num = 1;
+	node1 -> next = NULL;
+
+	node2 = malloc(sizeof(t_list));
+	node2 -> num = 2;
+	node2 -> next = NULL;
+
+	node3 = malloc(sizeof(t_list));
+	node3 -> num = 3;
+	node3 -> next = NULL;
+
+	node4 = malloc(sizeof(t_list));
+	node4 -> num = 4;
+	node4 -> next = NULL;
+
+	node5 = malloc(sizeof(t_list));
+	node5 -> num = 5;
+	node5 -> next = NULL;
+
+	stack_a = node1;
+	node1-> next = node2;
+	node2-> next = node3;
+
+	stack_b = node4;
+	node4 -> next = node5;
+	printf("Stack A:\n");
+	aux = stack_a;
+	while (aux != NULL)
+	{
+		printf("%d\n", aux -> num);
+		aux = aux -> next;
+	}
+	printf("Stack B:\n");
+	aux = stack_b;
+	while (aux != NULL)
+	{
+		printf("%d\n", aux -> num);
+		aux = aux -> next;
+	}
+	pb(&stack_a, &stack_b);
+
+	printf("Stack A después de push:\n");
+	aux = stack_a;
+	while (aux != NULL)
+	{
+    	printf("%d\n", aux->num);
+    	aux = aux->next;
+	}
+
+	printf("Stack B después de push:\n");
+	aux = stack_b;
+	while (aux != NULL)
+	{
+    	printf("%d\n", aux->num);
+    	aux = aux->next;
+	}
+
+	return 0;
 }
 
-int main() {
-    t_list *stack1 = NULL;
-    t_list *stack2 = NULL;
-
-    // Agregar algunos elementos a stack1
-    for (int i = 5; i >= 1; i--) {
-        t_list *newNode = (t_list *)malloc(sizeof(t_list));
-        newNode->num = i;
-        newNode->next = stack1;
-        stack1 = newNode;
-    }
-
-    // Imprimir el estado inicial de las pilas
-    printf("Stack 1: ");
-    printList(stack1);
-    printf("Stack 2: ");
-    printList(stack2);
-
-    // Llamar a la función push para pasar el primer elemento de stack1 a stack2
-	void mover
-    if (stack1 != NULL) {
-        t_list *temp = stack1->next;
-        stack1->next = stack2;
-        stack2 = stack1;
-        stack1 = temp;
-    }
-
-    // Imprimir el estado final de las pilas
-    printf("Después de push:\n");
-    printf("Stack 1: ");
-    printList(stack1);
-    printf("Stack 2: ");
-    printList(stack2);
-
-    return 0;
-}

@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putstr(char *s)
 {
@@ -57,32 +58,4 @@ void	ss(t_list **stack_a, t_list **stack_b)
 	swap(stack_a);
 	swap(stack_b);
 	ft_putstr("ss\n");
-}
-
-void printStack(t_list *stack) {
-    while (stack) {
-        printf("%d ", stack->num);
-        stack = stack->next;
-    }
-    printf("\n");
-}
-
-int main() {
-    t_list *stack = NULL;
-    for (int i = 1; i <= 5; ++i) {
-        t_list *newNode = (t_list *)malloc(sizeof(t_list));
-        newNode->num = i;
-        newNode->next = stack;
-        stack = newNode;
-    }
-
-    printf("Stack antes de swap: ");
-    printStack(stack);
-
-    swap(&stack);
-
-    printf("Stack después de swap: ");
-    printStack(stack);
-
-    return 0;
 }
