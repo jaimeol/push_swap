@@ -51,3 +51,18 @@ t_list	*ft_lstlast(t_list *stack)
 		stack = stack -> next;
 	return (stack);
 }
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*n;
+
+	if (!lst)
+		return ;
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		n = ft_lstlast(*lst);
+		n -> next = new;
+	}
+}
