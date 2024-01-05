@@ -14,16 +14,56 @@
 
 static void	reverse_rotate(t_list **stack)
 {
-	t_list	*first;
+	t_list	*penultimate;
+	t_list	*last;
 
-	first = *stack;
-	*stack = first -> next;
-	first -> next = NULL;
-	ft_lstaddback((*stack, first));
+	last = ft_lstlast(*stack);
+	while (penultimate -> next != last)
+		penultimate = penultimate -> next;
+	ft_lstadd_front(stack, last);
+	penultimate -> next = NULL;
 }
 
-void	rra(t_list **stack_a);
+void	rra(t_list **stack_a)
 {
 	reverse_rotate(stack_a);
 	ft_putstr("rra\n");
+}
+
+int main()
+{
+	t_list	*stack_a = NULL;
+	t_list	*stack_b = NULL;
+	t_list	*aux;
+	for (int i = 1; i <= 5; ++i) 
+	{
+		t_list *newNode = (t_list *)malloc(sizeof(t_list));
+        newNode->num = i;
+        newNode->next = stack_a;
+        stack_a = newNode;
+    }
+	for (int i = 1; i <= 5; ++i) 
+	{
+		t_list *newNode = (t_list *)malloc(sizeof(t_list));
+        newNode->num = i;
+        newNode->next = stack_b;
+        stack_b = newNode;
+    }
+	printf("Stack A:\n");
+	aux = stack_a;
+	while(aux != NULL)
+	{
+		printf("%d\n", aux -> num);
+		aux = aux -> next;
+	}
+	reverse_rotate(&stack_a);
+
+	printf("Stack A después de rotate:\n");
+	aux = stack_a;
+	while(aux != NULL)
+	{
+		printf("%d\n", aux -> num);
+		aux = aux -> next;
+	}
+
 }

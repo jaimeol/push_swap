@@ -52,17 +52,17 @@ t_list	*ft_lstlast(t_list *stack)
 	return (stack);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **stack, t_list *new)
 {
 	t_list	*n;
 
-	if (!lst)
+	if (!stack)
 		return ;
-	if (!*lst)
-		*lst = new;
+	if (!*stack)
+		*stack = new;
 	else
 	{
-		n = ft_lstlast(*lst);
+		n = ft_lstlast(*stack);
 		n -> next = new;
 	}
 }
