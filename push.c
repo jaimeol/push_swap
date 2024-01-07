@@ -103,7 +103,6 @@ int	main()
     	printf("%d\n", aux->num);
     	aux = aux->next;
 	}
-
 	return 0;
 }
 
