@@ -22,17 +22,23 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-void	sa(t_list **stack_a);
-void	sb(t_list **stack_b);
-void	ra(t_list **stack_a);
-void	rb(t_list **stack_b);
-void	ss(t_list **stack_a, t_list **stack_b);
-void	pa(t_list **stack_a, t_list	**stack_b);
-void	pb(t_list **stack_a, t_list **stack_b);
-void	ft_lstadd_front(t_list **stack, t_list *new);
-void	ft_lstadd_back(t_list **stack, t_list *new);
-void	ft_putstr(char *s);
-t_list	*ft_lstnew(int num);
-t_list	*ft_lstlast(t_list *stack);
+void		sa(t_list **stack_a);
+void		sb(t_list **stack_b);
+void		ra(t_list **stack_a);
+void		rb(t_list **stack_b);
+void		rra(t_list **stack_a);
+void		rrb(t_list **stack_b);
+void		rr(t_list **stack_a, t_list **stack_b);
+void		rrr(t_list **stack_a, t_list **stack_b);
+void		ss(t_list **stack_a, t_list **stack_b);
+void		pa(t_list **stack_a, t_list	**stack_b);
+void		pb(t_list **stack_a, t_list **stack_b);
+void		ft_lstadd_front(t_list **stack, t_list *new);
+void		ft_lstadd_back(t_list **stack, t_list *new);
+void		ft_putstr(char *s);
+t_list		*ft_lstnew(int num);
+t_list		*ft_lstlast(t_list *stack);
 
+static void	reverse_rotate(t_list **stack);
+static void	rotate(t_list **stack);
 #endif

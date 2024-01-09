@@ -44,10 +44,10 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	reverse_rotate(stack_b);
 	ft_putstr("rrr\n");
 }
-int main()
+
+/*int main()
 {
 	t_list	*stack_a = NULL;
-	t_list	*stack_b = NULL;
 	t_list	*aux;
 	for (int i = 1; i <= 5; ++i) 
 	{
@@ -55,13 +55,6 @@ int main()
         newNode->num = i;
         newNode->next = stack_a;
         stack_a = newNode;
-    }
-	for (int i = 1; i <= 5; ++i) 
-	{
-		t_list *newNode = (t_list *)malloc(sizeof(t_list));
-        newNode->num = i;
-        newNode->next = stack_b;
-        stack_b = newNode;
     }
 	printf("Stack A:\n");
 	aux = stack_a;
@@ -71,7 +64,7 @@ int main()
 		aux = aux -> next;
 	}
 	rra(&stack_a);
-	rra(&stack_a);
+	//rra(&stack_a);
 
 	printf("Stack A después de rotate:\n");
 	aux = stack_a;
@@ -81,4 +74,4 @@ int main()
 		aux = aux -> next;
 	}
 
-}
+}*/

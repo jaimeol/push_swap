@@ -20,7 +20,6 @@ static void	push(t_list **src, t_list **dest)
 	newnode = ft_lstnew((*src)->num);
 	newnode -> next = *dest;
 	*dest = newnode;
-
 	aux = *src;
 	*src = (*src)-> next;
 	free(aux);
@@ -38,7 +37,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pb\n");
 }
 
-int	main()
+/*int	main()
 {
 	t_list	*stack_a = NULL;
 	t_list	*stack_b = NULL;
@@ -105,4 +104,4 @@ int	main()
 	}
 	return 0;
 }
-
+*/

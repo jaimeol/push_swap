@@ -41,7 +41,7 @@ void	rr(t_list **stack_a, t_list **stack_b)
 	ft_putstr("rr\n");
 }
 
-int main()
+/*int main()
 {
 	t_list	*stack_a = NULL;
 	t_list	*stack_b = NULL;
@@ -83,8 +83,6 @@ int main()
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-
-
 	printf("Stack B después de rotate:\n");
 	aux = stack_a;
 	while(aux != NULL)
@@ -92,4 +90,4 @@ int main()
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-}
+}*/
