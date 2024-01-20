@@ -39,6 +39,5 @@ void		ft_putstr(char *s);
 t_list		*ft_lstnew(int num);
 t_list		*ft_lstlast(t_list *stack);
 
-static void	reverse_rotate(t_list **stack);
-static void	rotate(t_list **stack);
+
 #endif

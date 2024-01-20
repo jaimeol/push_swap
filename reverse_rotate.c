@@ -73,5 +73,5 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-
-}*/
+}
+*/

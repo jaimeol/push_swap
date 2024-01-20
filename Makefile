@@ -1,6 +1,6 @@
-NAME = libft.a
+NAME = push_swap.a
 
-SOURCES =	push.c swap.c rotate.c utils.c
+SOURCES =	push.c swap.c rotate.c utils.c reverse_rotate.c algorithm.c main.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

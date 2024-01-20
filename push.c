@@ -69,8 +69,6 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	node1-> next = node2;
 	node2-> next = node3;
 
-	stack_b = node4;
-	node4 -> next = node5;
 	printf("Stack A:\n");
 	aux = stack_a;
 	while (aux != NULL)
@@ -78,25 +76,9 @@ void	pb(t_list **stack_a, t_list **stack_b)
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-	printf("Stack B:\n");
-	aux = stack_b;
-	while (aux != NULL)
-	{
-		printf("%d\n", aux -> num);
-		aux = aux -> next;
-	}
-	pb(&stack_a, &stack_b);
 
-	printf("Stack A después de push:\n");
+	printf("Stack A después de sort5:\n");
 	aux = stack_a;
-	while (aux != NULL)
-	{
-    	printf("%d\n", aux->num);
-    	aux = aux->next;
-	}
-
-	printf("Stack B después de push:\n");
-	aux = stack_b;
 	while (aux != NULL)
 	{
     	printf("%d\n", aux->num);
