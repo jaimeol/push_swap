@@ -27,12 +27,6 @@ void	ft_putstr(char *s)
 	}
 }
 
-void	ft_lstadd_front(t_list **stack, t_list *new)
-{
-	new -> next = *stack;
-	*stack = new;
-}
-
 t_list	*ft_lstnew(int num)
 {
 	t_list	*k;
@@ -50,19 +44,4 @@ t_list	*ft_lstlast(t_list *stack)
 	while (stack && stack -> next)
 		stack = stack -> next;
 	return (stack);
-}
-
-void	ft_lstadd_back(t_list **stack, t_list *new)
-{
-	t_list	*n;
-
-	if (!stack)
-		return ;
-	if (!*stack)
-		*stack = new;
-	else
-	{
-		n = ft_lstlast(*stack);
-		n -> next = new;
-	}
 }

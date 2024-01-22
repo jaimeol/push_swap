@@ -6,7 +6,7 @@
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 11:44:10 by jolivare          #+#    #+#             */
-/*   Updated: 2024/01/20 11:49:17 by jolivare         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:32:50 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@ int	main(int argc, char *argv[])
 	stack_a = NULL;
 	if (argc == 3)
 		sort3(&stack_a);
+	if (argc == 5)
+		sort5(&stack_a);
 	return (0);
 }

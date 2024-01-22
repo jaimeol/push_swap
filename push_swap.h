@@ -33,8 +33,6 @@ void		rrr(t_list **stack_a, t_list **stack_b);
 void		ss(t_list **stack_a, t_list **stack_b);
 void		pa(t_list **stack_a, t_list	**stack_b);
 void		pb(t_list **stack_a, t_list **stack_b);
-void		ft_lstadd_front(t_list **stack, t_list *new);
-void		ft_lstadd_back(t_list **stack, t_list *new);
 void		ft_putstr(char *s);
 t_list		*ft_lstnew(int num);
 t_list		*ft_lstlast(t_list *stack);
