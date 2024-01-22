@@ -46,12 +46,19 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 	last = ft_lstlast(*stack_a);
 	if ((*stack_a)->next->num < (*stack_a)->num)
 	{
-		printf("Hola\n");
 		pb(stack_a, stack_b);
+		if ((*stack_a)->num < (*stack_a)->next->num)
+		{
+			ra(stack_a);
+			pb(stack_a, stack_b);
+		}
+		sort3(stack_a);
+		pa(stack_a, stack_b);
+		pa(stack_a, stack_b);
 	}
 }
 
-/*int	main()
+int	main()
 {
 	t_list	*stack_a = NULL;
 	t_list	*stack_b = NULL;
@@ -102,7 +109,7 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-	sort3(&stack_a);
+	sort5(&stack_a, &stack_b);
 	printf("Stack A después de sort5:\n");
 	aux = stack_a;
 	while (aux != NULL)
@@ -118,4 +125,4 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 		aux = aux -> next;
 	}
 	return (0);
-}*/
+}
