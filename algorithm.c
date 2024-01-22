@@ -51,13 +51,16 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-int	main()
+/*int	main()
 {
 	t_list	*stack_a = NULL;
 	t_list	*stack_b = NULL;
 	t_list	*aux;
-	
-	t_list	*node1, *node2, *node3, *node4, *node5;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+	t_list	*node4;
+	t_list	*node5;
 
 	node1 = malloc(sizeof(t_list));
 	node1 -> num = 5;
@@ -80,10 +83,10 @@ int	main()
 	node5 -> next = NULL;
 
 	stack_a = node1;
-	node1-> next = node2;
-	node2-> next = node3;
-	node3-> next = node4;
-	node4-> next = node5;
+	node1->next = node2;
+	node2->next = node3;
+	node3->next = node4;
+	node4->next = node5;
 
 	printf("Stack A:\n");
 	aux = stack_a;
@@ -114,5 +117,5 @@ int	main()
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-	return 0;
-}
+	return (0);
+}*/
