@@ -1,4 +1,16 @@
-NAME = push_swap.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/01/23 12:55:19 by jolivare          #+#    #+#              #
+#    Updated: 2024/01/23 12:55:19 by jolivare         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = push_swap
 
 SOURCES =	push.c swap.c rotate.c utils.c reverse_rotate.c algorithm.c
 

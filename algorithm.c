@@ -39,23 +39,9 @@ static void	sort3(t_list **stack)
 	}
 }
 
-static void	sort5(t_list **stack_a, t_list **stack_b)
+static void	sortelse(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*last;
-
-	last = ft_lstlast(*stack_a);
-	if ((*stack_a)->next->num < (*stack_a)->num)
-	{
-		pb(stack_a, stack_b);
-		if ((*stack_a)->num < (*stack_a)->next->num)
-		{
-			ra(stack_a);
-			pb(stack_a, stack_b);
-		}
-		sort3(stack_a);
-		pa(stack_a, stack_b);
-		pa(stack_a, stack_b);
-	}
+	
 }
 
 int	main()

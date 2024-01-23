@@ -12,5 +12,21 @@
 
 static void	push_swap(t_list **stack_a, t_list **stack_b)
 {
-	
+
+}
+
+void	input(char	*argv[], t)
+
+int	main(int argc, char *argv[])
+{
+	t_list	*stack_a;
+	t_list	*stack_b;
+
+	stack_a = NULL;
+	stack_b = NULL;
+
+	if (argc == 3)
+		sort3(&stack_a);
+	else
+		sortelse(&stack_a, &stack_b);
 }
