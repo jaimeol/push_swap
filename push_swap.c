@@ -15,7 +15,19 @@ static void	push_swap(t_list **stack_a, t_list **stack_b)
 
 }
 
-void	input(char	*argv[], t)
+void	input(char	*argv[], t_list **stack)
+{
+	int		i;
+	int		j;
+	char	**input;
+
+	*stack = NULL;
+	i = 1;
+	while (argv[i])
+	{
+		
+	}
+}
 
 int	main(int argc, char *argv[])
 {

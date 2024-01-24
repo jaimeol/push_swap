@@ -31,17 +31,44 @@ static void	sort3(t_list **stack)
 	{
 		if ((*stack)->num < (*stack)->next->num)
 			sa(stack);
-		else if ((*stack)->next->num)
+		else if ((*stack)->next->num < last->num)
 		{
 			rra(stack);
 			sa(stack);
 		}
 	}
+	else if ((*stack)->num < last->num && (*stack)->num > (*stack)->next->num)
+		rra(stack);
+
 }
 
-static void	sortelse(t_list **stack_a, t_list **stack_b)
+static void	sort2(t_list **stack)
 {
-	
+	if ((*stack)->num < (*stack)->next->num)
+		sa(stack);
+}
+
+static void	sort4(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+
+	pb(stack_a, stack_b);
+	sort3(stack_a);
+	last = ft_lstlast(*stack_a);
+	if ((*stack_b)->num > (*stack_a)->num)
+		pa(stack_a, stack_b);
+	else if ((*stack_a)->num > (*stack_b)->num && last->num > (*stack_b)->num)
+	{
+		pa(stack_a, stack_b);
+		ra(stack_a);
+	}
+	else if ((*stack_b)->num < (*stack_a)->num
+		&& (*stack_b)->num > (*stack_a)->next->num)
+	{
+		pa(stack_a, stack_b);
+		sa(stack_a);
+	}
+	//else if ((*stack_a)->)
 }
 
 int	main()
@@ -56,19 +83,19 @@ int	main()
 	t_list	*node5;
 
 	node1 = malloc(sizeof(t_list));
-	node1 -> num = 5;
+	node1 -> num = 2;
 	node1 -> next = NULL;
 
 	node2 = malloc(sizeof(t_list));
-	node2 -> num = 1;
+	node2 -> num = 4;
 	node2 -> next = NULL;
 
 	node3 = malloc(sizeof(t_list));
-	node3 -> num = 4;
+	node3 -> num = 1;
 	node3 -> next = NULL;
 
 	node4 = malloc(sizeof(t_list));
-	node4 -> num = 2;
+	node4 -> num = 5;
 	node4 -> next = NULL;
 
 	node5 = malloc(sizeof(t_list));
@@ -79,7 +106,7 @@ int	main()
 	node1->next = node2;
 	node2->next = node3;
 	node3->next = node4;
-	node4->next = node5;
+	//node4->next = node5;
 
 	printf("Stack A:\n");
 	aux = stack_a;
@@ -95,7 +122,8 @@ int	main()
 		printf("%d\n", aux -> num);
 		aux = aux -> next;
 	}
-	sort5(&stack_a, &stack_b);
+	printf("\n");
+	sort4(&stack_a, &stack_b);
 	printf("Stack A después de sort5:\n");
 	aux = stack_a;
 	while (aux != NULL)
