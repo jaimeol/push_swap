@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+static void	sort2(t_list **stack)
+{
+	if ((*stack)->num < (*stack)->next->num)
+		sa(stack);
+}
+
 static void	sort3(t_list **stack)
 {
 	t_list	*last;
@@ -39,13 +45,6 @@ static void	sort3(t_list **stack)
 	}
 	else if ((*stack)->num < last->num && (*stack)->num > (*stack)->next->num)
 		rra(stack);
-
-}
-
-static void	sort2(t_list **stack)
-{
-	if ((*stack)->num < (*stack)->next->num)
-		sa(stack);
 }
 
 static void	sort4(t_list **stack_a, t_list **stack_b)
@@ -62,13 +61,19 @@ static void	sort4(t_list **stack_a, t_list **stack_b)
 		pa(stack_a, stack_b);
 		ra(stack_a);
 	}
-	else if ((*stack_b)->num < (*stack_a)->num
-		&& (*stack_b)->num > (*stack_a)->next->num)
+	else if ((*stack_b)->num > (*stack_a)->next->num)
 	{
 		pa(stack_a, stack_b);
 		sa(stack_a);
 	}
-	//else if ((*stack_a)->)
+	else if ((*stack_a)->num > (*stack_b)->num && last->num < (*stack_b)->num
+		&& (*stack_a)->next->num > (*stack_b)->num)
+	{
+		rra(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
+		ra(stack_a);
+	}
 }
 
 int	main()
@@ -83,11 +88,11 @@ int	main()
 	t_list	*node5;
 
 	node1 = malloc(sizeof(t_list));
-	node1 -> num = 2;
+	node1 -> num = 4;
 	node1 -> next = NULL;
 
 	node2 = malloc(sizeof(t_list));
-	node2 -> num = 4;
+	node2 -> num = 2;
 	node2 -> next = NULL;
 
 	node3 = malloc(sizeof(t_list));
