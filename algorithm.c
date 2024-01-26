@@ -125,8 +125,6 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 		pa(stack_a, stack_b);
 }
 
-
-
 int	main()
 {
 	t_list	*stack_a = NULL;

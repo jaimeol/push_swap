@@ -15,11 +15,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
 	int				num;
 	struct s_list	*next;
+	int				cont;
 }	t_list;
 
 void		sa(t_list **stack_a);
@@ -36,7 +38,9 @@ void		pb(t_list **stack_a, t_list **stack_b);
 void		ft_putstr(char *s);
 t_list		*ft_lstnew(int num);
 t_list		*ft_lstlast(t_list *stack);
-//static void	sort3(t_list **stack);
-//static void	sortelse(t_list **stack_a, t_list **stack_b);
+static void	sort2(t_list **stack);
+static void	sort3(t_list **stack);
+static void	sort4(t_list **stack_a, t_list **stack_b);
+static void	sort5(t_list **stack_a, t_list **stack_b);
 
 #endif
