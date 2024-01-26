@@ -65,7 +65,7 @@ void	new_stack(char **input, t_list **stack)
 			write(2, "Error\n", 6);
 			return ;
 		}
-		//Función para añadir el stack
+		add_stack(n, stack);
 		i++;
 	}
 }
