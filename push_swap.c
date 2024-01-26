@@ -12,21 +12,6 @@
 
 static void	push_swap(t_list **stack_a, t_list **stack_b)
 {
-
-}
-
-void	input(char	*argv[], t_list **stack)
-{
-	int		i;
-	int		j;
-	char	**input;
-
-	*stack = NULL;
-	i = 1;
-	while (argv[i])
-	{
-		
-	}
 }
 
 int	main(int argc, char *argv[])
@@ -37,8 +22,12 @@ int	main(int argc, char *argv[])
 	stack_a = NULL;
 	stack_b = NULL;
 
-	if (argc == 3)
+	if (argc == 2)
+		sort2(&stack_a);
+	else if (argc == 3)
 		sort3(&stack_a);
-	else
-		sortelse(&stack_a, &stack_b);
+	else if (argc == 4)
+		sort4(&stack_a, &stack_b);
+	else if (argc == 5)
+		sort5(&stack_a, &stack_b);
 }

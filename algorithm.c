@@ -76,6 +76,34 @@ static void	sort4(t_list **stack_a, t_list **stack_b)
 	}
 }
 
+static void	sort5aux(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+
+	last = ft_lstlast(*stack_a);
+	if ((*stack_a)->next->next->num < (*stack_b)->num)
+	{
+		rra(stack_a);
+		rra(stack_a);
+		pa(stack_a, stack_b);
+		rra(stack_a);
+		rra(stack_a);
+	}
+	else if ((*stack_a)->next->next->num > (*stack_b)->num
+		&& last->num < (*stack_b)->num)
+	{
+		rra(stack_a);
+		pa(stack_a, stack_b);
+		ra(stack_a);
+		ra(stack_a);
+	}
+	else if (last->num > (*stack_b)->num)
+	{
+		pa(stack_a, stack_b);
+		ra(stack_a);
+	}
+}
+
 static void	sort5(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*last;
@@ -90,31 +118,14 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 			pa(stack_a, stack_b);
 			sa(stack_a);
 		}
-		else if ((*stack_a)->next->next->num < (*stack_b)->num)
-		{
-			rra(stack_a);
-			rra(stack_a);
-			pa(stack_a, stack_b);
-			rra(stack_a);
-			rra(stack_a);
-		}
-		else if ((*stack_a)->next->next->num > (*stack_b)->num
-			&& last->num < (*stack_b)->num)
-		{
-			pa(stack_a, stack_b);
-			rra(stack_a);
-			ra(stack_a);
-			ra(stack_a);
-		}
-		else if (last->num > (*stack_b)->num)
-		{
-			pa(stack_a, stack_b);
-			ra(stack_a);
-		}
+		else
+			sort5aux(stack_a, stack_b);
 	}
 	else if ((*stack_a)->num < (*stack_b)->num)
 		pa(stack_a, stack_b);
 }
+
+
 
 int	main()
 {
@@ -128,11 +139,11 @@ int	main()
 	t_list	*node5;
 
 	node1 = malloc(sizeof(t_list));
-	node1 -> num = 1;
+	node1 -> num = -4;
 	node1 -> next = NULL;
 
 	node2 = malloc(sizeof(t_list));
-	node2 -> num = 8;
+	node2 -> num = 113;
 	node2 -> next = NULL;
 
 	node3 = malloc(sizeof(t_list));
@@ -140,11 +151,11 @@ int	main()
 	node3 -> next = NULL;
 
 	node4 = malloc(sizeof(t_list));
-	node4 -> num = 3;
+	node4 -> num = 89;
 	node4 -> next = NULL;
 
 	node5 = malloc(sizeof(t_list));
-	node5 -> num = -4;
+	node5 -> num = 7;
 	node5 -> next = NULL;
 
 	stack_a = node1;
