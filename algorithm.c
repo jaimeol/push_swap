@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-/*static void	sort2(t_list **stack)
+static void	sort2(t_list **stack)
 {
 	if ((*stack)->num < (*stack)->next->num)
 		sa(stack);
-}*/
+}
 
 static void	sort3(t_list **stack)
 {
@@ -101,8 +101,8 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 		else if ((*stack_a)->next->next->num > (*stack_b)->num
 			&& last->num < (*stack_b)->num)
 		{
-			rra(stack_a);
 			pa(stack_a, stack_b);
+			rra(stack_a);
 			ra(stack_a);
 			ra(stack_a);
 		}
@@ -128,7 +128,7 @@ int	main()
 	t_list	*node5;
 
 	node1 = malloc(sizeof(t_list));
-	node1 -> num = -4;
+	node1 -> num = 1;
 	node1 -> next = NULL;
 
 	node2 = malloc(sizeof(t_list));
@@ -140,11 +140,11 @@ int	main()
 	node3 -> next = NULL;
 
 	node4 = malloc(sizeof(t_list));
-	node4 -> num = 1;
+	node4 -> num = 3;
 	node4 -> next = NULL;
 
 	node5 = malloc(sizeof(t_list));
-	node5 -> num = 3;
+	node5 -> num = -4;
 	node5 -> next = NULL;
 
 	stack_a = node1;
