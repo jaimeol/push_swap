@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-static void	sort2(t_list **stack)
+void	sort2(t_list **stack)
 {
 	if ((*stack)->num < (*stack)->next->num)
 		sa(stack);
 }
 
-static void	sort3(t_list **stack)
+void	sort3(t_list **stack)
 {
 	t_list	*last;
 
@@ -47,7 +47,7 @@ static void	sort3(t_list **stack)
 		rra(stack);
 }
 
-static void	sort4(t_list **stack_a, t_list **stack_b)
+void	sort4(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*last;
 
@@ -76,7 +76,7 @@ static void	sort4(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-static void	sort5aux(t_list **stack_a, t_list **stack_b)
+void	sort5aux(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*last;
 
@@ -104,13 +104,11 @@ static void	sort5aux(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-static void	sort5(t_list **stack_a, t_list **stack_b)
+void	sort5(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*last;
 
 	pb(stack_a, stack_b);
 	sort4(stack_a, stack_b);
-	last = ft_lstlast(*stack_a);
 	if ((*stack_a)->num > (*stack_b)->num)
 	{
 		if ((*stack_a)->next->num < (*stack_b)->num)
@@ -125,7 +123,7 @@ static void	sort5(t_list **stack_a, t_list **stack_b)
 		pa(stack_a, stack_b);
 }
 
-int	main()
+/*int	main()
 {
 	t_list	*stack_a = NULL;
 	t_list	*stack_b = NULL;
@@ -193,4 +191,4 @@ int	main()
 		aux = aux -> next;
 	}
 	return (0);
-}
+}*/

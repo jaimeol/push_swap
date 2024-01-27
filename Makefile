@@ -12,7 +12,8 @@
 
 NAME = push_swap
 
-SOURCES =	push.c swap.c rotate.c utils.c reverse_rotate.c algorithm.c
+SOURCES =	push.c swap.c rotate.c utils.c reverse_rotate.c algorithm.c ft_split.c \
+				stack.c 
 
 OBJECTS = $(SOURCES:.c=.o)
 

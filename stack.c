@@ -15,28 +15,27 @@
 void	add_stack(int n, t_list **stack)
 {
 	t_list	*node;
-	t_list	*i;
+	t_list	*aux;
 
 	node = (t_list *) malloc (sizeof (t_list));
 	if (!node)
-		return (NULL);
+		return ;
 	node->num = n;
 	node->next = NULL;
-	i = *stack;
+	aux = *stack;
 	if (*stack)
 	{
-		while (i->next)
-			i = i->next;
-		i->next = node;
+		while (aux->next)
+			aux = aux->next;
+		aux->next = node;
 	}
 	else
 		*stack = node;
-	*stack->cont++;
 }
 
 void	free_stack(t_list **stack)
 {
-	int		i;
+	t_list	*i;
 	t_list	*next_node;
 
 	i = *stack;
@@ -47,7 +46,7 @@ void	free_stack(t_list **stack)
 		i = next_node;
 	}
 	*stack = NULL;
-	return (NULL);
+	return ;
 }
 
 void	new_stack(char **input, t_list **stack)
@@ -65,7 +64,7 @@ void	new_stack(char **input, t_list **stack)
 			write(2, "Error\n", 6);
 			return ;
 		}
-		add_stack(n, stack);
+		add_stack(num, stack);
 		i++;
 	}
 }
