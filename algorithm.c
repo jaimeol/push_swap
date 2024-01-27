@@ -49,13 +49,17 @@ void	sort3(t_list **stack)
 
 void	sort4(t_list **stack_a, t_list **stack_b)
 {
+	printf("Hola\n");
 	t_list	*last;
 
 	pb(stack_a, stack_b);
 	sort3(stack_a);
 	last = ft_lstlast(*stack_a);
 	if ((*stack_b)->num > (*stack_a)->num)
+	{
 		pa(stack_a, stack_b);
+		printf("Vini\n");
+	}
 	else if ((*stack_a)->num > (*stack_b)->num && last->num > (*stack_b)->num)
 	{
 		pa(stack_a, stack_b);
@@ -79,7 +83,7 @@ void	sort4(t_list **stack_a, t_list **stack_b)
 void	sort5aux(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*last;
-
+	printf("Hola\n";)
 	last = ft_lstlast(*stack_a);
 	if ((*stack_a)->next->next->num < (*stack_b)->num)
 	{
@@ -106,9 +110,9 @@ void	sort5aux(t_list **stack_a, t_list **stack_b)
 
 void	sort5(t_list **stack_a, t_list **stack_b)
 {
-
 	pb(stack_a, stack_b);
 	sort4(stack_a, stack_b);
+	printf("Hola");
 	if ((*stack_a)->num > (*stack_b)->num)
 	{
 		if ((*stack_a)->next->num < (*stack_b)->num)
@@ -120,7 +124,10 @@ void	sort5(t_list **stack_a, t_list **stack_b)
 			sort5aux(stack_a, stack_b);
 	}
 	else if ((*stack_a)->num < (*stack_b)->num)
+	{
 		pa(stack_a, stack_b);
+		printf("Bellingham\n");
+	}
 }
 
 /*int	main()

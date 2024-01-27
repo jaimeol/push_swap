@@ -21,6 +21,7 @@ typedef struct s_list
 {
 	int				num;
 	struct s_list	*next;
+	int				cont;
 }	t_list;
 
 int		ft_atoi(const char *str);
