@@ -47,5 +47,6 @@ void	sort4(t_list **stack_a, t_list **stack_b);
 void	sort5(t_list **stack_a, t_list **stack_b);
 t_list	*ft_lstnew(int num);
 t_list	*ft_lstlast(t_list *stack);
-
+int		valid_input(t_list *stack);
+int		sorted(t_list *stack);
 #endif

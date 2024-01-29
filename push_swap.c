@@ -47,19 +47,11 @@ int	main(int argc, char *argv[])
 
 	stack_a = NULL;
 	stack_b = NULL;
-
+	if (argc == 1)
+		return (0);
 	get_input(argv, &stack_a);
-	if (stack_a->cont == 2)
-		sort2(&stack_a);
-	else if (stack_a->cont == 3)
-		sort3(&stack_a);
-	else if (stack_a->cont == 4)
-		sort4(&stack_a, &stack_b);
-	else if (stack_a->cont == 5)
-	{
-		printf("Hola\n");
-		sort5(&stack_a, &stack_b);
-	}
+	if (!stack_a || valid_input(stack_a) == 0 || sorted(stack_a) == 0)
+		return (1);
 	printf("Stack A:\n");
 	aux = stack_a;
 	while (aux != NULL)
@@ -75,12 +67,30 @@ int	main(int argc, char *argv[])
 		aux = aux -> next;
 	}
 	printf("\n");
-	sort5(&stack_a, &stack_b);
-	printf("Stack A después de sort:\n");
+
+	if (stack_a->cont == 2)
+		sort2(&stack_a);
+	else if (stack_a->cont == 3)
+		sort3(&stack_a);
+	else if (stack_a->cont == 4)
+		sort4(&stack_a, &stack_b);
+	else if (stack_a->cont == 5)
+		sort5(&stack_a, &stack_b);
+	/*else if (stack_a->cont > 5)
+		sortelse(&stack_a, &stack_b);*/
+	printf("Stack A después del algoritmo:\n");
 	aux = stack_a;
 	while (aux != NULL)
 	{
 		printf("%d\n", aux->num);
 		aux = aux->next;
 	}
+	printf("Stack B después de sort5:\n");
+	aux = stack_b;
+	while (aux != NULL)
+	{
+		printf("%d\n", aux -> num);
+		aux = aux -> next;
+	}
+	return (0);
 }
