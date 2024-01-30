@@ -51,7 +51,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	get_input(argv, &stack_a);
 	if (!stack_a || valid_input(stack_a) == 0 || sorted(stack_a) == 0)
-		return (1);
+		return (0);
 	printf("Stack A:\n");
 	aux = stack_a;
 	while (aux != NULL)

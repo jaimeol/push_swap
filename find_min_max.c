@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sortelse.c                                         :+:      :+:    :+:   */
+/*   find_min_max.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 15:12:39 by jolivare          #+#    #+#             */
-/*   Updated: 2024/01/30 18:03:37 by jolivare         ###   ########.fr       */
+/*   Created: 2024/01/30 15:54:59 by jolivare          #+#    #+#             */
+/*   Updated: 2024/01/30 16:39:02 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sortelse(t_list **stack_a, t_list **stack_b)
+int	find_min(t_list *stack)
 {
-	t_list	*i;
-	int		pos;
+	int	min;
 
-	pos = 0;
-	i = *stack_a;
-	while (i->next)
+	min = stack->num;
+	while (stack)
 	{
-		i->pos = pos;
-		pos++;
-		i = i->next;
+		if (stack->num < min)
+			min = stack->num;
+		stack = stack->next;
 	}
-	find_min(*stack_a);
-	find_max(*stack_a);
-	find_min(*stack_b);
-	find_max(*stack_b);
+	return (min);
+}
+
+int	find_max(t_list *stack)
+{
+	int	max;
+
+	max = stack->num;
+	while (stack)
+	{
+		if (stack->num > max)
+			max = stack->num;
+		stack = stack->next;
+	}
+	return (max);
 }

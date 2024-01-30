@@ -19,9 +19,11 @@
 
 typedef struct s_list
 {
-	int				num;
 	struct s_list	*next;
+	struct s_list	*right_pos;
+	int				num;
 	int				cont;
+	int				pos;
 }	t_list;
 
 int		ft_atoi(const char *str);
@@ -49,4 +51,7 @@ t_list	*ft_lstnew(int num);
 t_list	*ft_lstlast(t_list *stack);
 int		valid_input(t_list *stack);
 int		sorted(t_list *stack);
+int	find_max(t_list *stack);
+int	find_min(t_list *stack);
+
 #endif
