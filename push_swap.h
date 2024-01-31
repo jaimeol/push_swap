@@ -20,7 +20,7 @@
 typedef struct s_list
 {
 	struct s_list	*next;
-	struct s_list	*right_pos;
+	int				right_pos;
 	int				num;
 	int				cont;
 	int				pos;
@@ -51,7 +51,9 @@ t_list	*ft_lstnew(int num);
 t_list	*ft_lstlast(t_list *stack);
 int		valid_input(t_list *stack);
 int		sorted(t_list *stack);
-int	find_max(t_list *stack);
-int	find_min(t_list *stack);
+int		find_max(t_list *stack);
+int		find_min(t_list *stack);
+void	assign_positions(t_list **stack);
+void	ideal_positions(t_list **stack);
 
 #endif

@@ -1,0 +1,5 @@
+Por hacer
+
+-Gestión de errores: "2-" "Letras" y "Decimales"
+
+-Función que pare el programa cuando el stack est

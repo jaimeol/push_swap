@@ -44,30 +44,36 @@ int	main(int argc, char *argv[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 	t_list	*aux;
+	int		pos;
 
 	stack_a = NULL;
 	stack_b = NULL;
+	pos = 1;
 	if (argc == 1)
 		return (0);
 	get_input(argv, &stack_a);
+	assign_positions(&stack_a);
+	ideal_positions(&stack_a);
 	if (!stack_a || valid_input(stack_a) == 0 || sorted(stack_a) == 0)
 		return (0);
+
 	printf("Stack A:\n");
+	printf("Num	Pos	Right Pos\n");
 	aux = stack_a;
 	while (aux != NULL)
 	{
-		printf("%d\n", aux -> num);
-		aux = aux -> next;
+		printf("%d	%d	%d\n", aux->num, aux->pos, aux->right_pos);
+		aux = aux->next;
 	}
 	aux = stack_b;
 	printf("Stack B:\n");
 	while (aux != NULL)
 	{
-		printf("%d\n", aux -> num);
-		aux = aux -> next;
+		printf("%d\n", aux->num);
+		aux = aux->next;
 	}
 	printf("\n");
-
+	printf("Tamaño del stack: %d\n", stack_a->cont);
 	if (stack_a->cont == 2)
 		sort2(&stack_a);
 	else if (stack_a->cont == 3)
@@ -89,8 +95,9 @@ int	main(int argc, char *argv[])
 	aux = stack_b;
 	while (aux != NULL)
 	{
-		printf("%d\n", aux -> num);
-		aux = aux -> next;
+		printf("%d\n", aux->num);
+		aux = aux->next;
 	}
+
 	return (0);
 }
