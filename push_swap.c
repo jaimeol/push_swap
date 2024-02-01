@@ -50,7 +50,7 @@ int	main(int argc, char *argv[])
 	stack_b = NULL;
 	pos = 1;
 	if (argc == 1)
-		return (0);
+		exit (0);
 	get_input(argv, &stack_a);
 	assign_positions(&stack_a);
 	ideal_positions(&stack_a);
@@ -82,8 +82,8 @@ int	main(int argc, char *argv[])
 		sort4(&stack_a, &stack_b);
 	else if (stack_a->cont == 5)
 		sort5(&stack_a, &stack_b);
-	/*else if (stack_a->cont > 5)
-		sortelse(&stack_a, &stack_b);*/
+	else if (stack_a->cont > 5)
+		sortelse(&stack_a, &stack_b);
 	printf("Stack A después del algoritmo:\n");
 	aux = stack_a;
 	while (aux != NULL)

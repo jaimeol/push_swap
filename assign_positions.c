@@ -6,7 +6,7 @@
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:19:23 by jolivare          #+#    #+#             */
-/*   Updated: 2024/01/31 14:58:11 by jolivare         ###   ########.fr       */
+/*   Updated: 2024/02/01 09:58:06 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,24 @@ void	assign_positions(t_list **stack)
 	}
 }
 
-
 void	ideal_positions(t_list **stack_a)
 {
-	t_list	*current_a;
-	t_list	*current_b;
+	t_list	*current_1;
+	t_list	*current_2;
 
-	current_a = *stack_a;
-	while (current_a != NULL)
+	current_1 = *stack_a;
+	while (current_1 != NULL)
 	{
-		current_a->right_pos = 1;
-		current_b = *stack_a;
-		while (current_b != NULL)
+		current_1->right_pos = 1;
+		current_2 = *stack_a;
+		while (current_2 != NULL)
 		{
-			if (current_b != current_a && current_b->num < current_a->num)
+			if (current_2 != current_1 && current_2->num < current_1->num)
 			{
-				current_a->right_pos++;
+				current_1->right_pos++;
 			}
-			current_b = current_b->next;
+			current_2 = current_2->next;
 		}
-		current_a = current_a->next;
+		current_1 = current_1->next;
 	}
 }
-

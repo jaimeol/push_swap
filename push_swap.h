@@ -55,5 +55,6 @@ int		find_max(t_list *stack);
 int		find_min(t_list *stack);
 void	assign_positions(t_list **stack);
 void	ideal_positions(t_list **stack);
+void	sortelse(t_list **stack_a, t_list **stack_b);
 
 #endif
