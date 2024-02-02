@@ -31,7 +31,7 @@ void	add_stack(int n, t_list **stack)
 	}
 	else
 		*stack = node;
-	(*stack)->cont++;
+	(*stack)->size++;
 }
 
 void	free_stack(t_list **stack)

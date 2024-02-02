@@ -44,11 +44,9 @@ int	main(int argc, char *argv[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 	t_list	*aux;
-	int		pos;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	pos = 1;
 	if (argc == 1)
 		exit (0);
 	get_input(argv, &stack_a);
@@ -73,16 +71,15 @@ int	main(int argc, char *argv[])
 		aux = aux->next;
 	}
 	printf("\n");
-	printf("Tamaño del stack: %d\n", stack_a->cont);
-	if (stack_a->cont == 2)
+	if (stack_a->size == 2)
 		sort2(&stack_a);
-	else if (stack_a->cont == 3)
+	else if (stack_a->size == 3)
 		sort3(&stack_a);
-	else if (stack_a->cont == 4)
+	else if (stack_a->size == 4)
 		sort4(&stack_a, &stack_b);
-	else if (stack_a->cont == 5)
+	else if (stack_a->size == 5)
 		sort5(&stack_a, &stack_b);
-	else if (stack_a->cont > 5)
+	else if (stack_a->size > 5)
 		sortelse(&stack_a, &stack_b);
 	printf("Stack A después del algoritmo:\n");
 	aux = stack_a;

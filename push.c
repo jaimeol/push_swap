@@ -27,12 +27,16 @@ static void	push(t_list **src, t_list **dest)
 
 void	pa(t_list **stack_a, t_list **stack_b)
 {
+	if (!*stack_b)
+		exit (0);
 	push(stack_b, stack_a);
 	ft_putstr("pa\n");
 }
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {
+	if (!*stack_a)
+		exit (0);
 	push(stack_a, stack_b);
 	ft_putstr("pb\n");
 }

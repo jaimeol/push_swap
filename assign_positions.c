@@ -40,9 +40,7 @@ void	ideal_positions(t_list **stack_a)
 		while (current_2 != NULL)
 		{
 			if (current_2 != current_1 && current_2->num < current_1->num)
-			{
 				current_1->right_pos++;
-			}
 			current_2 = current_2->next;
 		}
 		current_1 = current_1->next;

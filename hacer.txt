@@ -2,4 +2,15 @@ Por hacer
 
 -Gestión de errores: "2-" "Letras" y "Decimales"
 
--Función que pare el programa cuando el stack est
+Idea:
+
+Ordenar con el algoritmo que dice la página e implementar mi idea de las posiciones ideales.
+
+Ahora:
+¿Encontrar maximo y minimo puede ser util?
+Pasar de stack de forma ordenada
+Que queden 3  y ordenar esos tres
+Luego comparar las posiciones ideales para ir pasando al stack A
+
+Mañana:
+Reducir costes
