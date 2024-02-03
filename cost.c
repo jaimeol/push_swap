@@ -6,13 +6,13 @@
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:20:13 by jolivare          #+#    #+#             */
-/*   Updated: 2024/02/01 17:20:13 by jolivare         ###   ########.fr       */
+/*   Updated: 2024/02/03 12:03:19 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_place_a(t_list *stack_a, int num_push)
+/*int	ft_find_place_a(t_list *stack_a, int num_push)
 {
 	int		i;
 	t_list	*tmp;
@@ -33,4 +33,4 @@ int	ft_find_place_a(t_list *stack_a, int num_push)
 		}
 	}
 	return (i);
-}
+}*/

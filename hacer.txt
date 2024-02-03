@@ -7,10 +7,6 @@ Idea:
 Ordenar con el algoritmo que dice la página e implementar mi idea de las posiciones ideales.
 
 Ahora:
-¿Encontrar maximo y minimo puede ser util?
-Pasar de stack de forma ordenada
-Que queden 3  y ordenar esos tres
-Luego comparar las posiciones ideales para ir pasando al stack A
-
-Mañana:
+Restar en bucle (stack_b->next != NULL)
+Al encotrar el numero hacer ra (de momento), poner primero el numero y hacer pa;
 Reducir costes
