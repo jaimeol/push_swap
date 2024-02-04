@@ -60,5 +60,6 @@ void	sort_min_extremes(t_list **stack_a, t_list **stack_b);
 void	sort_max_extremes(t_list **stack_a, t_list **stack_b);
 int		ft_find_place_a(t_list *stack_a, int num_push);
 int		find_right_next(t_list **stack_a, t_list **stack_b);
+void	rotate_push(t_list **stack_a, t_list **stack_b);
 
 #endif

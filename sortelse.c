@@ -15,15 +15,8 @@
 void	sortelse(t_list **stack_a, t_list **stack_b)
 {
 	int		size;
-	int		right_next;
-	int		min;
-	int		max;
-	//t_list	*last;
 
 	size = (*stack_a)->size;
-	min = find_min(*stack_a);
-	max = find_max(*stack_a);
-	//last = ft_lstlast(*stack_a);
 	if (size > 3)
 	{
 		while (size > 3)
@@ -32,64 +25,7 @@ void	sortelse(t_list **stack_a, t_list **stack_b)
 			size--;
 		}
 		sort3(stack_a);
-		while ((*stack_b))
-		{
-			right_next = find_right_next(stack_a, stack_b);
-			if ((*stack_b)->num != min || (*stack_b)->num != max)
-			{
-				while ((*stack_a)->num != right_next)
-					ra(stack_a);
-				pa(stack_a, stack_b);
-			}
-		}
-		while ((*stack_a)->num != min)
-			ra (stack_a);
-	}
-}
-
-void	sort_min_extremes(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*last;
-	int		min_a;
-	int		min_b;
-
-	min_a = find_min(*stack_a);
-	min_b = find_min(*stack_b);
-	last = ft_lstlast(*stack_b);
-	if (min_b < min_a)
-	{
-		if (min_b == last->num)
-		{
-			rrb(stack_b);
-			pa(stack_a, stack_b);
-		}
-		else if (min_b == (*stack_b)->num)
-			pa(stack_a, stack_b);
-	}
-}
-
-void	sort_max_extremes(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*last;
-	int		max_b;
-	int		max_a;
-
-	max_a = find_max(*stack_a);
-	max_b = find_max(*stack_b);
-	last = ft_lstlast(*stack_b);
-	if (max_b > max_a)
-	{
-		if (max_b == last->num)
-		{
-			rrb(stack_b);
-			pa(stack_a, stack_b);
-			ra(stack_a);
-		}
-		else if (max_b == (*stack_b)->num)
-		{
-			pa(stack_a, stack_b);
-			ra(stack_a);
-		}
+		rotate_push(stack_a, stack_b);
 	}
 }
 
@@ -115,4 +51,26 @@ int	find_right_next(t_list **stack_a, t_list **stack_b)
 	if (i == INT_MAX)
 		return (find_min(*stack_a));
 	return (sol);
+}
+
+void	rotate_push(t_list **stack_a, t_list **stack_b)
+{
+	int	min;
+	int	max;
+	int	right_next;
+
+	min = find_min(*stack_a);
+	max = find_max(*stack_a);
+	while ((*stack_b))
+	{
+		right_next = find_right_next(stack_a, stack_b);
+		if ((*stack_b)->num != min || (*stack_b)->num != max)
+		{
+			while ((*stack_a)->num != right_next)
+				ra(stack_a);
+			pa(stack_a, stack_b);
+		}
+	}
+	while ((*stack_a)->num != min)
+		ra (stack_a);
 }
