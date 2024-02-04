@@ -37,11 +37,14 @@ int	valid_input(t_list *stack)
 
 int	sorted(t_list *stack)
 {
-	while (stack->next)
+	t_list	*aux;
+
+	aux = stack;
+	while (aux->next)
 	{
-		if (stack->num > stack->next->num)
+		if (aux->num > aux->next->num)
 			return (1);
-		stack = stack->next;
+		aux = aux->next;
 	}
 	return (0);
 }

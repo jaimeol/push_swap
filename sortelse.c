@@ -18,12 +18,12 @@ void	sortelse(t_list **stack_a, t_list **stack_b)
 	int		right_next;
 	int		min;
 	int		max;
-	t_list	*last;
+	//t_list	*last;
 
 	size = (*stack_a)->size;
 	min = find_min(*stack_a);
 	max = find_max(*stack_a);
-	last = ft_lstlast(*stack_a);
+	//last = ft_lstlast(*stack_a);
 	if (size > 3)
 	{
 		while (size > 3)
@@ -41,14 +41,9 @@ void	sortelse(t_list **stack_a, t_list **stack_b)
 					ra(stack_a);
 				pa(stack_a, stack_b);
 			}
-			else
-			{
-				if (last->num == min)
-					rra(stack_a);
-				else if ((*stack_b)->num == max)
-					ra(stack_a);
-			}
 		}
+		while ((*stack_a)->num != min)
+			ra (stack_a);
 	}
 }
 
