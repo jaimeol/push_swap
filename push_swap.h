@@ -20,10 +20,11 @@
 typedef struct s_list
 {
 	struct s_list	*next;
-	int				right_pos;
+	struct s_list	*right_pos;
 	int				num;
 	int				size;
 	int				pos;
+	int				cost;
 }	t_list;
 
 int		ft_atoi(const char *str);
@@ -54,7 +55,7 @@ int		sorted(t_list *stack);
 int		find_max(t_list *stack);
 int		find_min(t_list *stack);
 void	assign_positions(t_list **stack);
-void	ideal_positions(t_list **stack);
+void	ideal_positions(t_list **stack_a, t_list **stack_b);
 void	sortelse(t_list **stack_a, t_list **stack_b);
 void	sort_min_extremes(t_list **stack_a, t_list **stack_b);
 void	sort_max_extremes(t_list **stack_a, t_list **stack_b);

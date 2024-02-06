@@ -12,25 +12,21 @@
 
 #include "push_swap.h"
 
-/*int	ft_find_place_a(t_list *stack_a, int num_push)
+void	get_cost(t_list	**stack)
 {
-	int		i;
-	t_list	*tmp;
+	t_list	*i;
+	int		pos;
 
-	i = 1;
-	if (num_push < stack_a->num && num_push > ft_lstlast(stack_a)->num)
-		i = 0;
-	else if (num_push > find_min(stack_a) || num_push < find_min(stack_a))
-		i = assign_positions(stack_a, find_min(stack_a));
-	else
+	pos = 0;
+	i = *stack;
+	while (i)
 	{
-		tmp = stack_a->next;
-		while (stack_a->num > num_push || tmp->num < num_push)
-		{
-			stack_a = stack_a->next;
-			tmp = stack_a->next;
-			i++;
-		}
+		i->pos = pos;
+		if (pos > ((*stack)->size / 2))
+			i->cost = (*stack)->size - pos;
+		else
+			i->cost = pos;
+		pos++;
+		i = i->next;
 	}
-	return (i);
-}*/
+}

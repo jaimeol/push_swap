@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 10:19:23 by jolivare          #+#    #+#             */
-/*   Updated: 2024/02/03 19:49:12 by jolivare         ###   ########.fr       */
+/*   Created: 2024/02/06 19:01:06 by jolivare          #+#    #+#             */
+/*   Updated: 2024/02/06 19:01:06 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	assign_positions(t_list **stack)
 	int		position;
 	t_list	*current;
 
-	position = 1;
+	position = 0;
 	current = *stack;
 	while (current != NULL)
 	{
@@ -27,22 +27,27 @@ void	assign_positions(t_list **stack)
 	}
 }
 
-void	ideal_positions(t_list **stack_a)
+void	ideal_positions(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*current_1;
-	t_list	*current_2;
+	t_list	*aux;
+	t_list	*aux2;
+	int		max;
 
-	current_1 = *stack_a;
-	while (current_1 != NULL)
+	aux = *stack_a;
+	while (aux)
 	{
-		current_1->right_pos = 1;
-		current_2 = *stack_a;
-		while (current_2 != NULL)
+		aux2 = *stack_b;
+		max = INT_MIN;
+		while (aux2)
 		{
-			if (current_2 != current_1 && current_2->num < current_1->num)
-				current_1->right_pos++;
-			current_2 = current_2->next;
+			if (max < aux2->num && aux2->num < aux->num)
+			{
+				aux->right_pos = aux2;
+				max = aux2->num;
+			}
 		}
-		current_1 = current_1->next;
+		if (max == INT_MIN)
+			aux->right_pos->num = find_max(*stack_b);
+		aux = aux->next;
 	}
 }
