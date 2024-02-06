@@ -96,7 +96,6 @@ void	sort5aux(t_list **stack_a, t_list **stack_b)
 		ra(stack_a);
 		ra(stack_a);
 	}
-
 }
 
 void	sort5(t_list **stack_a, t_list **stack_b)

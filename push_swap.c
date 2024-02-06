@@ -51,6 +51,8 @@ int	main(int argc, char *argv[])
 	if (argc == 1)
 		exit (0);
 	get_input(argv, &stack_a);
+	assign_positions(&stack_a);
+	ideal_positions(&stack_a);
 	if (!stack_a || valid_input(stack_a) == 0 || sorted(stack_a) == 0)
 		return (0);
 

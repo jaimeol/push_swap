@@ -27,3 +27,22 @@ void	assign_positions(t_list **stack)
 	}
 }
 
+void	ideal_positions(t_list **stack_a)
+{
+	t_list	*current_1;
+	t_list	*current_2;
+
+	current_1 = *stack_a;
+	while (current_1 != NULL)
+	{
+		current_1->right_pos = 1;
+		current_2 = *stack_a;
+		while (current_2 != NULL)
+		{
+			if (current_2 != current_1 && current_2->num < current_1->num)
+				current_1->right_pos++;
+			current_2 = current_2->next;
+		}
+		current_1 = current_1->next;
+	}
+}

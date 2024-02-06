@@ -14,18 +14,14 @@
 
 void	sortelse(t_list **stack_a, t_list **stack_b)
 {
-	int		size;
+	//int	min_b;
+	//int	max_b;
 
-	size = (*stack_a)->size;
-	if (size > 3)
+	if ((*stack_a)->size > 3)
 	{
-		while (size > 3)
-		{
-			pb(stack_a, stack_b);
-			size--;
-		}
-		sort3(stack_a);
-		rotate_push(stack_a, stack_b);
+		sort_pb(stack_a, stack_b);
+		//sort3(stack_a);
+		//rotate_push(stack_a, stack_b);
 	}
 }
 
@@ -71,6 +67,43 @@ void	rotate_push(t_list **stack_a, t_list **stack_b)
 			pa(stack_a, stack_b);
 		}
 	}
+	min = find_min(*stack_a);
+	max = find_max(*stack_a);
 	while ((*stack_a)->num != min)
-		ra (stack_a);
+		ra(stack_a);
+}
+
+void	sort_pb(t_list **stack_a, t_list **stack_b)
+{
+	int		right_next;
+	t_list	*last;
+	/*int	min;
+	int	max;
+	int	min_b;
+	int	max_b;*/
+
+	//max = find_max(stack_a);
+	//min = find_min(stack_a);
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	while ((*stack_a)->size > 3)
+	{
+		last = ft_lstlast(*stack_b);
+		//min_b = find_min(*stack_b);
+		//max_b = find_max(*stack_b);
+		while ((*stack_a)->num > (*stack_b)->num)
+			pb(stack_a, stack_b);
+		if ((*stack_a)->num < (*stack_b)->num)
+		{
+			right_next = find_right_next(stack_b, stack_a);
+			printf("%d\n", right_next);
+			while (last->num != right_next)
+			{
+				rb(stack_b);
+			}
+			pb(stack_a, stack_b);
+
+		}
+		break ;
+	}
 }

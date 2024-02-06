@@ -27,18 +27,39 @@ static void	push(t_list **src, t_list **dest)
 
 void	pa(t_list **stack_a, t_list **stack_b)
 {
-	if (!*stack_b)
-		exit (0);
+	int	size_a;
+	int	size_b;
+
+	if (!(*stack_a))
+		size_a = 0;
+	else
+		size_a = (*stack_a)->size;
+	size_b = (*stack_b)->size;
+	if (!*stack_a)
+		return ;
 	push(stack_b, stack_a);
 	ft_putstr("pa\n");
+	(*stack_a)->size = size_a + 1;
+	if (*stack_b)
+		(*stack_b)->size = size_b - 1;
 }
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {
+	int	size_a;
+	int	size_b;
+
+	if (!*stack_b)
+		size_b = 0;
+	else
+		size_b = (*stack_b)->size;
+	size_a = (*stack_a)->size;
 	if (!*stack_a)
-		exit (0);
+		return ;
 	push(stack_a, stack_b);
 	ft_putstr("pb\n");
+	(*stack_a)->size = size_a - 1;
+	(*stack_b)->size = size_b + 1;
 }
 
 /*int	main()
