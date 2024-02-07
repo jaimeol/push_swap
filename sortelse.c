@@ -79,7 +79,7 @@ void	sort_pb(t_list **stack_a, t_list **stack_b)
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
 	last = ft_lstlast(*stack_b);
-	while ((*stack_a)->size != 3)
+	while ((*stack_a)->size > 3)
 	{
 		min_b = find_min(*stack_b);
 		while ((*stack_a)->num > (*stack_b)->num)
@@ -94,12 +94,11 @@ void	sort_pb(t_list **stack_a, t_list **stack_b)
 					rrb(stack_b);
 					last = ft_lstlast(*stack_b);
 				}
-				else if ((*stack_b)->pos < (*stack_b)->size / 2)
+				else
 				{
 					rb(stack_b);
-					last = ft_lstlast(*stack_b);
+					last = ft_lstlast
 				}
-				break
 			}
 			pb(stack_a, stack_b);
 		}

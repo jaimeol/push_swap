@@ -6,7 +6,7 @@
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:05:38 by jolivare          #+#    #+#             */
-/*   Updated: 2024/02/07 15:20:56 by jolivare         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:03:24 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ void	return_to_a(t_list **stack_a, t_list **stack_b)
 		rra(stack_a);
 		last = ft_lstlast(*stack_a);
 	}
+}
+
+void	decision(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*move;
+
+	move = lower_cost(stack_a, stack_b);
+	while (move->pos > (*stack)->size / 2
+		&& move->true_pos->pos <= (*stack_b)->size / 2
+		&& move != (*stack_a)
+		&& move->true_pos != (*stack_b)) 
+		rrr(stack_a, stack_b);
+	while 
 }
