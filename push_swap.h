@@ -48,14 +48,15 @@ void	sort2(t_list **stack);
 void	sort3(t_list **stack);
 void	sort4(t_list **stack_a, t_list **stack_b);
 void	sort5(t_list **stack_a, t_list **stack_b);
+void	check_max_b(t_list **stack_b);
 t_list	*ft_lstnew(int num);
 t_list	*ft_lstlast(t_list *stack);
+t_list	*find_max(t_list *stack);
+t_list	*find_min(t_list *stack);
 int		valid_input(t_list *stack);
 int		sorted(t_list *stack);
-int		find_max(t_list *stack);
-int		find_min(t_list *stack);
 void	assign_positions(t_list **stack);
-void	ideal_positions(t_list **stack_a, t_list **stack_b);
+void	ideal_positions(t_list **stack_a, t_list *stack_b);
 void	sortelse(t_list **stack_a, t_list **stack_b);
 void	sort_min_extremes(t_list **stack_a, t_list **stack_b);
 void	sort_max_extremes(t_list **stack_a, t_list **stack_b);
@@ -66,5 +67,6 @@ void	sort_pb(t_list **stack_a, t_list **stack_b);
 void	get_cost(t_list	**stack);
 int		rrr_cost(t_list **stack_a, t_list **stack_b, int cont);
 t_list	*lower_cost(t_list **stack_a, t_list **stack_b);
+void	return_to_a(t_list **stack_a, t_list **stack_b);
 
 #endif

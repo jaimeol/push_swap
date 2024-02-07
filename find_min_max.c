@@ -12,29 +12,29 @@
 
 #include "push_swap.h"
 
-int	find_min(t_list *stack)
+t_list	*find_min(t_list *stack)
 {
-	int	min;
+	t_list	min;
 
-	min = stack->num;
+	min = stack;
 	while (stack)
 	{
-		if (stack->num < min)
-			min = stack->num;
+		if (stack->num < min->num)
+			min = stack;
 		stack = stack->next;
 	}
 	return (min);
 }
 
-int	find_max(t_list *stack)
+t_list	*find_max(t_list *stack)
 {
-	int	max;
+	t_list	*max;
 
-	max = stack->num;
+	max = stack;
 	while (stack)
 	{
-		if (stack->num > max)
-			max = stack->num;
+		if (stack->num > max->num)
+			max = stack;
 		stack = stack->next;
 	}
 	return (max);

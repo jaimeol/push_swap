@@ -70,3 +70,19 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
+
+void	check_max_b(t_list **stack_b)
+{
+	t_list	*max;
+
+	max = find_max(*stack_b);
+	if ((*stack_b) == max)
+		return ;
+	while ((*stack_b) != max)
+	{
+		if (max->num <= (*stack_b)->size / 2)
+			rb(stack_b);
+		else
+			rrb(stack_b);
+	}
+}

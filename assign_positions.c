@@ -27,7 +27,7 @@ void	assign_positions(t_list **stack)
 	}
 }
 
-void	ideal_positions(t_list **stack_a, t_list **stack_b)
+void	ideal_positions(t_list **stack_a, t_list *stack_b)
 {
 	t_list	*aux;
 	t_list	*aux2;
@@ -36,7 +36,7 @@ void	ideal_positions(t_list **stack_a, t_list **stack_b)
 	aux = *stack_a;
 	while (aux)
 	{
-		aux2 = *stack_b;
+		aux2 = stack_b;
 		max = INT_MIN;
 		while (aux2)
 		{
@@ -47,7 +47,7 @@ void	ideal_positions(t_list **stack_a, t_list **stack_b)
 			}
 		}
 		if (max == INT_MIN)
-			aux->right_pos->num = find_max(*stack_b);
+			aux->right_pos->num = find_max(stack_b);
 		aux = aux->next;
 	}
 }
