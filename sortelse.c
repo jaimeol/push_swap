@@ -74,10 +74,11 @@ void	sort_pb(t_list **stack_a, t_list **stack_b)
 {
 	int		right_next;
 	t_list	*last;
-	int	min_b;
+	int		min_b;
 
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
+	last = ft_lstlast(*stack_b);
 	while ((*stack_a)->size > 3)
 	{
 		min_b = find_min(*stack_b);

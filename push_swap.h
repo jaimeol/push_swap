@@ -63,5 +63,8 @@ int		ft_find_place_a(t_list *stack_a, int num_push);
 int		find_right_next(t_list **stack_a, t_list **stack_b);
 void	rotate_push(t_list **stack_a, t_list **stack_b);
 void	sort_pb(t_list **stack_a, t_list **stack_b);
+void	get_cost(t_list	**stack);
+int		rrr_cost(t_list **stack_a, t_list **stack_b, int cont);
+t_list	*lower_cost(t_list **stack_a, t_list **stack_b);
 
 #endif
