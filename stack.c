@@ -16,7 +16,9 @@ void	add_stack(int n, t_list **stack)
 {
 	t_list	*node;
 	t_list	*aux;
+	int		size;
 
+	size = 0;
 	node = (t_list *) malloc (sizeof (t_list));
 	if (!node)
 		return ;

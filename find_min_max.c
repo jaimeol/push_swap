@@ -14,7 +14,7 @@
 
 t_list	*find_min(t_list *stack)
 {
-	t_list	min;
+	t_list	*min;
 
 	min = stack;
 	while (stack)

@@ -56,7 +56,7 @@ t_list	*find_min(t_list *stack);
 int		valid_input(t_list *stack);
 int		sorted(t_list *stack);
 void	assign_positions(t_list **stack);
-void	ideal_positions(t_list **stack_a, t_list *stack_b);
+void	ideal_positions(t_list **stack_a, t_list **stack_b);
 void	sortelse(t_list **stack_a, t_list **stack_b);
 void	sort_min_extremes(t_list **stack_a, t_list **stack_b);
 void	sort_max_extremes(t_list **stack_a, t_list **stack_b);
@@ -65,8 +65,10 @@ int		find_right_next(t_list **stack_a, t_list **stack_b);
 void	rotate_push(t_list **stack_a, t_list **stack_b);
 void	sort_pb(t_list **stack_a, t_list **stack_b);
 void	get_cost(t_list	**stack);
-int		rrr_cost(t_list **stack_a, t_list **stack_b, int cont);
-t_list	*lower_cost(t_list **stack_a, t_list **stack_b);
+int		rrr_cost(t_list *stack_a, t_list *stack_b, int cont);
+t_list	*lower_cost(t_list *stack_a, t_list *stack_b);
 void	return_to_a(t_list **stack_a, t_list **stack_b);
+void	decision(t_list **stack_a, t_list **stack_b);
+void	finish_rotation(t_list *move, t_list **stack_a, t_list **stack_b);
 
 #endif

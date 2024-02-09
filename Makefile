@@ -13,8 +13,8 @@
 NAME = push_swap
 
 SOURCES =	push.c swap.c rotate.c utils.c reverse_rotate.c tinysort.c ft_split.c \
-				stack.c push_swap.c errors.c sortelse.c find_min_max.c assign_positions.c \
-				cost.c 
+				stack.c push_swap.c errors.c find_min_max.c assign_positions.c \
+				cost.c algorithm.c
 				
 
 OBJECTS = $(SOURCES:.c=.o)

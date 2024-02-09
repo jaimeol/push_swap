@@ -31,40 +31,40 @@ void	get_cost(t_list	**stack)
 	}
 }
 
-int	rrr_cost(t_list **stack_a, t_list **stack_b, int cont)
+int	rrr_cost(t_list *stack_a, t_list *stack_b, int cont)
 {
 	int	sol;
 
-	sol = (*stack_a)->cost + (*stack_a)->right_pos->cost;
-	if ((*stack_a)->pos <= cont && (*stack_a)->right_pos->pos <= ((*stack_b)->size / 2))
+	sol = stack_a->cost + stack_a->right_pos->cost;
+	if (stack_a->pos <= cont && stack_a->right_pos->pos <= (stack_b->size / 2))
 	{
-		if ((*stack_a)->cost <= (*stack_a)->right_pos->cost)
-			sol = (*stack_a)->right_pos->cost;
+		if (stack_a->cost <= stack_a->right_pos->cost)
+			sol = stack_a->right_pos->cost;
 		else
-			sol = (*stack_a)->cost;
+			sol = stack_a->cost;
 	}
 	return (sol);
 }
 
-t_list	*lower_cost(t_list **stack_a, t_list **stack_b)
+t_list	*lower_cost(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*i;
 	int		total_cost;
 	int		cont;
 	int		aux;
 
-	cont = (*stack_a)->size / 2;
-	total_cost =  (*stack_a)->cost + (*stack_a)->right_pos->cost;
-	i = (*stack_a);
-	while ((*stack_a))
+	cont = stack_a->size / 2;
+	total_cost =  stack_a->cost + stack_a->right_pos->cost;
+	i = stack_a;
+	while (stack_a)
 	{
 		aux = rrr_cost(stack_a, stack_b, cont);
 		if (aux < total_cost)
 		{
 			total_cost = aux;
-			i = (*stack_a);
+			i = stack_a;
 		}
-		(*stack_a) = (*stack_a)->next;
+		stack_a = stack_a->next;
 	}
 	return (i);
 }

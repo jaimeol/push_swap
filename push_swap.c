@@ -52,15 +52,13 @@ int	main(int argc, char *argv[])
 		exit (0);
 	get_input(argv, &stack_a);
 	assign_positions(&stack_a);
-	//ideal_positions(&stack_a, &stack_b);
 	if (!stack_a || valid_input(stack_a) == 0 || sorted(stack_a) == 0)
 		return (0);
 	/*printf("Stack A:\n");
-	printf("Num	Pos	Right Pos\n");
 	aux2 = stack_a;
 	while (aux2 != NULL)
 	{
-		printf("%d	%d\n", aux2->num, aux2->pos);
+		printf("%d\n", aux2->num);
 		aux2 = aux2->next;
 	}
 	aux = stack_b;
@@ -81,6 +79,7 @@ int	main(int argc, char *argv[])
 		sort5(&stack_a, &stack_b);
 	else if (stack_a->size > 3)
 		sortelse(&stack_a, &stack_b);
+	free (stack_a);
 	/*printf("Stack A después del algoritmo:\n");
 	aux = stack_a;
 	while (aux != NULL)
@@ -94,6 +93,6 @@ int	main(int argc, char *argv[])
 	{
 		printf("%d\n", aux->num);
 		aux = aux->next;
-	}*/
-	return (0);
+	}
+	return (0);*/
 }
