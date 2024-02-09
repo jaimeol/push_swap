@@ -6,7 +6,7 @@
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:05:38 by jolivare          #+#    #+#             */
-/*   Updated: 2024/02/09 14:11:01 by jolivare         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:43:13 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,8 @@ void	return_to_a(t_list **stack_a, t_list **stack_b)
 	max_a = find_max(*stack_a);
 	while (last != max_a)
 	{
-		if (max_a->pos > ((*stack_a)->size / 2))
-		{
-			rra(stack_a);
-			last = ft_lstlast(*stack_a);
-		}
-		else if (max_a->pos <= ((*stack_a)->size / 2))
-		{
-			ra(stack_a);
-			last = ft_lstlast(*stack_a);
-		}
+		rra(stack_a);
+		last = ft_lstlast(*stack_a);
 	}
 }
 
