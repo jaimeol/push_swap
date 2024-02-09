@@ -16,7 +16,9 @@ static void	reverse_rotate(t_list **stack)
 {
 	t_list	*last;
 	t_list	*current;
+	int		aux_size;
 
+	aux_size = (*stack)->size;
 	last = ft_lstlast(*stack);
 	current = *stack;
 	while (current->next != last)
@@ -24,6 +26,7 @@ static void	reverse_rotate(t_list **stack)
 	current->next = NULL;
 	last->next = *stack;
 	*stack = last;
+	(*stack)->size = aux_size;
 }
 
 void	rra(t_list **stack_a)

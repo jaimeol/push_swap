@@ -15,11 +15,14 @@
 static void	rotate(t_list **stack)
 {
 	t_list	*last;
+	int		aux_size;
 
+	aux_size = (*stack)->size;
 	last = ft_lstlast(*stack);
 	last -> next = (*stack);
 	*stack = (*stack)-> next;
 	last -> next -> next = NULL;
+	(*stack)->size = aux_size;
 }
 
 void	ra(t_list **stack_a)
