@@ -26,7 +26,7 @@ int	valid_input(t_list *stack)
 			if (stack->num == aux->num && stack != aux)
 			{
 				write(2, "Error\n", 6);
-				return (0);
+				exit (0);
 			}
 			aux = aux->next;
 		}
@@ -49,4 +49,33 @@ int	sorted(t_list *stack)
 	return (0);
 }
 
-//int	is_letter()
+int	is_letter(char **str)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+	while (str[i])
+	{
+		if ((str[i][0] < '0' || str[i][0] > '9') && str[i][0] != '-')
+		{
+			if (str[i][0] != '+')
+			{
+				write(2, "Error\n", 6);
+				exit (0);
+			}
+		}
+		while(str[i][j])
+		{
+			if (str[i][j] < '0' || str[i][j] > '9')
+			{
+				write(2, "Error\n", 6);
+				exit (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
