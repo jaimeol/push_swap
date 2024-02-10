@@ -48,3 +48,5 @@ int	sorted(t_list *stack)
 	}
 	return (0);
 }
+
+//int	is_letter()

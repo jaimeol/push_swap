@@ -43,8 +43,6 @@ int	main(int argc, char *argv[])
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	/*t_list	*aux;
-	t_list	*aux2;*/
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -54,21 +52,6 @@ int	main(int argc, char *argv[])
 	assign_positions(&stack_a);
 	if (!stack_a || valid_input(stack_a) == 0 || sorted(stack_a) == 0)
 		return (0);
-	/*printf("Stack A:\n");
-	aux2 = stack_a;
-	while (aux2 != NULL)
-	{
-		printf("%d\n", aux2->num);
-		aux2 = aux2->next;
-	}
-	aux = stack_b;
-	printf("Stack B:\n");
-	while (aux != NULL)
-	{
-		printf("%d\n", aux->num);
-		aux = aux->next;
-	}
-	printf("\n");*/
 	if (stack_a->size == 2)
 		sort2(&stack_a);
 	else if (stack_a->size == 3)
@@ -80,19 +63,4 @@ int	main(int argc, char *argv[])
 	else if (stack_a->size > 3)
 		sortelse(&stack_a, &stack_b);
 	free (stack_a);
-	/*printf("Stack A después del algoritmo:\n");
-	aux = stack_a;
-	while (aux != NULL)
-	{
-		printf("%d\n", aux->num);
-		aux = aux->next;
-	}
-	printf("Stack B después de sort5:\n");
-	aux = stack_b;
-	while (aux != NULL)
-	{
-		printf("%d\n", aux->num);
-		aux = aux->next;
-	}
-	return (0);*/
 }

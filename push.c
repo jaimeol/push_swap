@@ -38,7 +38,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	if (!*stack_a)
 		return ;
 	push(stack_b, stack_a);
-	ft_putstr("pa\n");
+	write (1, "pa\n", 3);
 	(*stack_a)->size = size_a + 1;
 	if (*stack_b)
 		(*stack_b)->size = size_b - 1;
@@ -57,7 +57,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	if (!*stack_a)
 		return ;
 	push(stack_a, stack_b);
-	ft_putstr("pb\n");
+	write(1, "pb\n", 3);
 	(*stack_a)->size = size_a - 1;
 	(*stack_b)->size = size_b + 1;
 }
