@@ -23,13 +23,13 @@ void	get_input(char *argv[], t_list **stack)
 	while (argv[i])
 	{
 		input = ft_split(argv[i], ' ');
-		is_letter(input);
 		if (!input)
 			return ;
 		else if (input[0] == NULL)
 			return ;
 		j = 0;
 		new_stack(input, stack);
+		is_letter(input);
 		while (input[j])
 		{
 			free(input[j]);

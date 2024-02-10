@@ -6,7 +6,7 @@
 /*   By: jolivare <jolivare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:05:38 by jolivare          #+#    #+#             */
-/*   Updated: 2024/02/10 12:23:02 by jolivare         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:35:19 by jolivare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	finish_rotation(t_list *move, t_list **stack_a, t_list **stack_b)
 		ra(stack_a);
 	while (move != (*stack_a) && move->pos > (*stack_a)->size / 2)
 		rra(stack_a);
-	while (move->right_pos != (*stack_b) 
+	while (move->right_pos != (*stack_b)
 		&& move->right_pos->pos <= (*stack_b)->size / 2)
 		rb(stack_b);
 	while (move->right_pos != (*stack_b)

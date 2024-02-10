@@ -54,7 +54,7 @@ t_list	*lower_cost(t_list *stack_a, t_list *stack_b)
 	int		aux;
 
 	cont = stack_a->size / 2;
-	total_cost =  stack_a->cost + stack_a->right_pos->cost;
+	total_cost = stack_a->cost + stack_a->right_pos->cost;
 	i = stack_a;
 	while (stack_a)
 	{

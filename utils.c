@@ -49,12 +49,13 @@ int	ft_atoi(const char *str)
 			sign *= -1;
 		i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		res = res * 10 + (str[i] - '0');
+	while (str[i])
+	{	
+		res = (res  + str[i] - '0') * 10;
 		i++;
 	}
-	return (res * sign);
+	res = (res / 10) * sign;
+	return (res);
 }
 
 void	check_max_b(t_list **stack_b)
@@ -71,4 +72,10 @@ void	check_max_b(t_list **stack_b)
 		else
 			rrb(stack_b);
 	}
+}
+
+void	exit_error()
+{
+	write(2, "Error\n", 6);
+	exit (0);
 }

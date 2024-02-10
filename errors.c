@@ -61,18 +61,12 @@ int	is_letter(char **str)
 		if ((str[i][0] < '0' || str[i][0] > '9') && str[i][0] != '-')
 		{
 			if (str[i][0] != '+')
-			{
-				write(2, "Error\n", 6);
-				exit (0);
-			}
+				exit_error();
 		}
 		while(str[i][j])
 		{
-			if (str[i][j] < '0' || str[i][j] > '9')
-			{
-				write(2, "Error\n", 6);
-				exit (0);
-			}
+			if ((str[i][j] < '0' || str[i][j] > '9') && str[i][j] != ' ')
+				exit_error();
 			j++;
 		}
 		i++;
