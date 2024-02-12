@@ -49,27 +49,27 @@ int	sorted(t_list *stack)
 	return (0);
 }
 
-int	is_letter(char **str)
+int	is_valid_number(char *str)
 {
 	int	i;
-	int	j;
+	int	sign; 
 
-	i = 1;
-	j = 0;
-	while (str[i])
+	i = 0;
+	sign = 0;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if ((str[i][0] < '0' || str[i][0] > '9') && str[i][0] != '-')
-		{
-			if (str[i][0] != '+')
-				exit_error();
-		}
-		while(str[i][j])
-		{
-			if ((str[i][j] < '0' || str[i][j] > '9') && str[i][j] != ' ')
-				exit_error();
-			j++;
-		}
+		sign = 1;
 		i++;
 	}
+	if (str[i] < '0' || str[i] > '9')
+		exit_error();
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			exit_error();
+		i++;
+	}
+	if (sign && (str[i - 1] == '-' || str[i - 1] == '+'))
+		exit_error();
 	return (0);
 }

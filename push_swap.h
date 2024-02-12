@@ -70,7 +70,7 @@ t_list	*lower_cost(t_list *stack_a, t_list *stack_b);
 void	return_to_a(t_list **stack_a, t_list **stack_b);
 void	decision(t_list **stack_a, t_list **stack_b);
 void	finish_rotation(t_list *move, t_list **stack_a, t_list **stack_b);
-int		is_letter(char **str);
+int		is_valid_number(char *str);
 void	exit_error();
 
 #endif

@@ -23,13 +23,9 @@ void	get_input(char *argv[], t_list **stack)
 	while (argv[i])
 	{
 		input = ft_split(argv[i], ' ');
-		if (!input)
-			return ;
-		else if (input[0] == NULL)
-			return ;
 		j = 0;
 		new_stack(input, stack);
-		is_letter(input);
+		is_valid_number(*input);
 		while (input[j])
 		{
 			free(input[j]);
