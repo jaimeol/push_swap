@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 t_list	*ft_lstnew(int num)
 {
 	t_list	*k;
@@ -50,8 +49,8 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	while (str[i])
-	{	
-		res = (res  + str[i] - '0') * 10;
+	{
+		res = (res + str[i] - '0') * 10;
 		i++;
 	}
 	res = (res / 10) * sign;
@@ -74,7 +73,7 @@ void	check_max_b(t_list **stack_b)
 	}
 }
 
-void	exit_error()
+void	exit_error(void)
 {
 	write(2, "Error\n", 6);
 	exit (0);

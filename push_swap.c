@@ -26,10 +26,7 @@ void	get_input(char *argv[], t_list **stack)
 		k = 0;
 		input = ft_split(argv[i], ' ');
 		while (input[k])
-		{
-			is_valid_number(input[k]);
-			k++;
-		}
+			is_valid_number(input[k++]);
 		new_stack(input, stack);
 		j = 0;
 		while (input[j])

@@ -52,7 +52,7 @@ int	sorted(t_list *stack)
 int	is_valid_number(char *str)
 {
 	int	i;
-	int	sign; 
+	int	sign;
 
 	i = 0;
 	sign = 0;
