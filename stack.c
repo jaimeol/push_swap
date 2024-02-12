@@ -64,8 +64,7 @@ void	new_stack(char **input, t_list **stack)
 		if (num > INT_MAX || num < INT_MIN)
 		{
 			free_stack(stack);
-			write(2, "Error\n", 6);
-			return ;
+			exit_error();
 		}
 		add_stack(num, stack);
 		i++;

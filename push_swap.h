@@ -71,6 +71,7 @@ void	return_to_a(t_list **stack_a, t_list **stack_b);
 void	decision(t_list **stack_a, t_list **stack_b);
 void	finish_rotation(t_list *move, t_list **stack_a, t_list **stack_b);
 int		is_valid_number(char *str);
+int		is_valid_number_dquoted(char **str);
 void	exit_error();
 
 #endif

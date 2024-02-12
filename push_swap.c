@@ -17,15 +17,21 @@ void	get_input(char *argv[], t_list **stack)
 	int		i;
 	int		j;
 	char	**input;
+	int		k;
 
 	*stack = NULL;
 	i = 1;
 	while (argv[i])
 	{
+		k = 0;
 		input = ft_split(argv[i], ' ');
-		j = 0;
+		while (input[k])
+		{
+			is_valid_number(input[k]);
+			k++;
+		}
 		new_stack(input, stack);
-		is_valid_number(*input);
+		j = 0;
 		while (input[j])
 		{
 			free(input[j]);
