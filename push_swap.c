@@ -56,11 +56,8 @@ int	main(int argc, char *argv[])
 		sort2(&stack_a);
 	else if (stack_a->size == 3)
 		sort3(&stack_a);
-	else if (stack_a->size == 4)
-		sort4(&stack_a, &stack_b);
-	else if (stack_a->size == 5)
-		sort5(&stack_a, &stack_b);
 	else if (stack_a->size > 3)
 		sortelse(&stack_a, &stack_b);
-	free (stack_a);
+	free_stack(&stack_a);
+	exit(0);
 }

@@ -76,5 +76,5 @@ void	check_max_b(t_list **stack_b)
 void	exit_error(void)
 {
 	write(2, "Error\n", 6);
-	exit (0);
+	exit (1);
 }

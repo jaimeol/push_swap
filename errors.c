@@ -24,10 +24,7 @@ int	valid_input(t_list *stack)
 		while (aux)
 		{
 			if (stack->num == aux->num && stack != aux)
-			{
-				write(2, "Error\n", 6);
-				exit (0);
-			}
+				exit_error ();
 			aux = aux->next;
 		}
 		stack = stack->next;
