@@ -31,7 +31,7 @@ t_list	*ft_lstlast(t_list *stack)
 	return (stack);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	int		sign;
 	size_t	res;

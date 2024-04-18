@@ -128,5 +128,4 @@ void	pb(t_list **stack_a, t_list **stack_b)
     	aux = aux->next;
 	}
 	return 0;
-}
-*/
+}*/
