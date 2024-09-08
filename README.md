@@ -31,9 +31,6 @@ rrb: Reverse Rotate B - rotate all numbers in stack B downwards.
 
 rrr: Reverse Rotate A and B - perform rra and rrb simultaneously.
 
-## Experience
-Although the push_swap project presented a tough challenge, I found the process to be enjoyable and rewarding. Despite lacking prior experience in algorithmic problem-solving, tackling this challenge provided me with a valuable opportunity to learn and grow as a programmer. I developed key skills in problem-solving and efficient solution implementation, preparing me to tackle more complex challenges in my programming journey.
-
 ### Useful links
 [Algorithm's logic](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
 
