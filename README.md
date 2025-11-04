@@ -1,37 +1,43 @@
-# Push_swap
+# 🧩 push_swap
 
-## Summary
-In the push_swap project at 42, we tackled the challenge of sorting a stack of numbers using a limited set of operations. Through this project, I gained valuable skills in implementing and optimizing efficient sorting algorithms, with a focus on cost calculation to minimize the total number of operations.
+> A sorting algorithm challenge from **42 School** — implemented entirely in **C**, under strict operational constraints.
 
-## Implementation
-My approach was to calculate the cost of each operation and optimize the algorithm to minimize the total number of operations required to sort the stack. This approach proved to be efficient enough, achieving a score of 5/5 on the performance test with 100 numbers and a score of 4/5 with 500 numbers.
+---
 
-## Available Moves
+## 🧠 Overview
+`push_swap` is a program that sorts a stack of integers using **two stacks (A and B)** and a **limited set of operations**.  
+The challenge lies in **minimizing the number of moves**, pushing algorithmic efficiency and optimization to the limit.
 
-sa: Swap A - swap the first two numbers in stack A.
+---
 
-sb: Swap B - swap the first two numbers in stack B.
+## ⚙️ Implementation Details
+My approach focused on **cost-based optimization** — for each element, I computed the number of operations needed to move it to the correct position, then executed the minimal-cost path.  
+This hybrid strategy allowed the program to achieve:
 
-ss: Swap A and B - perform sa and sb simultaneously.
+- 🏅 **5/5** performance score (100 numbers)  
+- 🥈 **4/5** performance score (500 numbers)
 
-pa: Push A - move the first number from stack B to stack A.
+---
 
-pb: Push B - move the first number from stack A to stack B.
+## 🔄 Available Operations
 
-ra: Rotate A - rotate all numbers in stack A upwards.
+| Operation | Description |
+|------------|-------------|
+| `sa`, `sb`, `ss` | Swap top elements of A, B, or both |
+| `pa`, `pb` | Push from one stack to another |
+| `ra`, `rb`, `rr` | Rotate stack(s) upwards |
+| `rra`, `rrb`, `rrr` | Rotate stack(s) downwards |
 
-rb: Rotate B - rotate all numbers in stack B upwards.
+---
 
+## 🧩 Key Idea
+The algorithm combines:
+- **Greedy insertion sorting**  
+- **Rotation cost balancing**  
+- **Simultaneous stack movement** (`rr` and `rrr` optimizations)
 
-rr: Rotate A and B - perform ra and rb simultaneously.
+---
 
-rra: Reverse Rotate A - rotate all numbers in stack A downwards.
-
-rrb: Reverse Rotate B - rotate all numbers in stack B downwards.
-
-rrr: Reverse Rotate A and B - perform rra and rrb simultaneously.
-
-### Useful links
-[Algorithm's logic](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
-
-[Tester by gemartin](https://github.com/gemartin99/Push-Swap-Tester)
+## 📎 Resources
+- [Algorithm's logic](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
+- [Tester by gemartin](https://github.com/gemartin99/Push-Swap-Tester)
